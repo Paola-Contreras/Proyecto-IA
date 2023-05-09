@@ -1,4 +1,5 @@
-# lab09-IA
-
-### Video task 1 - Frozen Lake -
-- https://www.youtube.com/watch?v=TQ6PDotXEyU
+# Proyecto no.1 -IA
+## Sistema de recomendaciones de peliculas y series 
+### Integrantes
+- Ana Paola de León 
+- Gabriela Contreras
