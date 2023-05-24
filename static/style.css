@@ -23,13 +23,12 @@
   }
 
   header h1 {
-    font-size: 4vw;
+    font-size: 6vw;
     line-height: .8;
     top: 10px;
     text-align: center;
     color:white;
     left:800px;
-    font-family: "monospace";
 
   }
 
@@ -43,6 +42,19 @@
     display: block;
   }
 
+  text{
+    font-family: monospace;
+    font-size: 2.5vw;
+    color: lightgray;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    height: 85%;
+  }
+  
   .Button_container {
     display: flex;
     justify-content: center;
@@ -120,6 +132,15 @@
     margin-top: 15px;
     display: flex;
   }
+  .container .card  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+
+  }
 .container .card:hover {
     transform: translateY(-15px);
     box-shadow: 1px 12px 34px rgba(0, 0, 0, 0.31);
@@ -140,4 +161,6 @@
     font-weight: 700;
     line-height: 50px;
     margin-bottom: 12px;
+    opacity: 1;
+    z-index: 1;
   }
