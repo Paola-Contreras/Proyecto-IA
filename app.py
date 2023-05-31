@@ -27,6 +27,7 @@ def get_recommendations(user_id):
         predictions.append(predicted_rating)
     
     recommendations = pd.DataFrame({'movieId': unrated_items, 'predicted_rating': predictions})
+    recommendations['movieId'] = recommendations['movieId'].astype(str)
     recommendations_with_metadata = pd.merge(recommendations, movies_metadata_df[['id', 'title', 'poster_path']], left_on='movieId', right_on='id', how='left')
     recommendations_with_metadata = recommendations_with_metadata.dropna(subset=['title'])
     top_recommendations = recommendations_with_metadata.sort_values('predicted_rating', ascending=False)
@@ -47,13 +48,17 @@ def index():
     
     movies = randomUserRecos()
 
-    # Info
     movies = movies.head(5)
     titles = list((movies['title']))
     posters = list((movies['poster_path']))
     posters_link = []
     [posters_link.append('https://image.tmdb.org/t/p/original' + i) for i in posters]
-    # title = 'Avatar 2'
+    print(posters_link)
+    # title = 'Avatar'
     # image_url = "https://lumiere-a.akamaihd.net/v1/images/e9fa83c7242fb46fa962150a60301d4e_2764x4096_7a402a9f.jpeg?region=0,0,2764,4096"
     return render_template('index.html', title = titles, image_url=posters_link)
 
+@app.route("/rerun")
+def rerun():
+    # Place your rerun logic here (if any)
+    return render_template("index.html")
