@@ -60,5 +60,4 @@ def index():
 
 @app.route("/rerun")
 def rerun():
-    # Place your rerun logic here (if any)
     return render_template("index.html")
